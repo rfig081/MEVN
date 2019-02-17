@@ -1,4 +1,4 @@
-# ggwp
+# vue-app
 
 ## Project setup
 ```
