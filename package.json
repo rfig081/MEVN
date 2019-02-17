@@ -1,0 +1,11 @@
+{
+  "name": "mevn",
+  "version": "1.0.0",
+  "description": "Mongo/Express/Vue/Node - Stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reynold Figueroa",
+  "license": "ISC"
+}
