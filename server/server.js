@@ -1,9 +1,13 @@
 const express = require ('express')
-const bodyParser = require ('body-parser')
-const routes = require('./routes.js')
 const app = express()
+
 const config = require ('./server-config')
+const routes = require('./routes/routes')
+
 const mongoose = require ('mongoose')
+const bodyParser = require ('body-parser')
+
+
 
 mongoose.connect(config.DB_URL, {
     dbName: 'Training'
@@ -14,13 +18,16 @@ mongoose.connect(config.DB_URL, {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 })
 
+
 routes(app)
-var server = app.listen(3000, () => {
-    console.log('Connected to: ', server.address().port)
+
+
+const server = app.listen(3000, () => {
+    console.log('Connected to:', server.address().port)
 })
