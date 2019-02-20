@@ -10,6 +10,7 @@ const bodyParser = require ('body-parser')
 
 
 mongoose.connect(config.DB_URL, {
+    useNewUrlParser: true,
     dbName: 'Training'
 }).catch(err=>{
     console.log('Cannot connect to db')
